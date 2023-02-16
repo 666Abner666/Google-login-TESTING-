@@ -1,23 +1,23 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="/build/favicon.ico" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <!-- <script type="moudle" src="App.js"></script> -->
-    <meta name="description" content="Web site created using create-react-app" />
-    <link rel="apple-touch-icon" href="/logo192.png" />
-    <link rel="manifest" href="/build/manifest.json" />
-    <title>React App</title>
-    <script src="https://accounts.google.com/gsi/client" async defer="defer"></script>
-    <script defer="defer" src="/build/static/js/main.4d6f051e.js"></script>
-    <link href="/build/static/css/main.073c9b0a.css" rel="stylesheet">
+	<meta charset="UTF-8">
+	<title>Google Login Example</title>
+	<!-- include the Google Sign-In API script -->
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<!-- set the Google API client ID -->
+	<meta name="google-signin-client_id" content="1097504830403-uujkl2ue0n6ok3tchisr66ll0pq02cge.apps.googleusercontent.com">
 </head>
+<body>
+	<!-- create a div for the Google Sign-In button -->
+	<div class="g-signin2" data-onsuccess="onSignIn"></div>
 
-<body><noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+	<!-- create a function to handle successful Google Sign-In -->
+	<script>
+		function onSignIn(googleUser) {
+			var profile = googleUser.getBasicProfile();
+			console.log("Logged in as: " + profile.getName());
+		}
+	</script>
 </body>
-
 </html>
