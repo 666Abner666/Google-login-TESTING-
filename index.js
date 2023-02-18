@@ -7,10 +7,10 @@
 function handleCredentialResponse(googleUser) {
     console.log('1')
     console.log("Encoded JWT ID token:" + googleUser.credential);
-    // var userObject = jwt_decode(googleUser.credential);
-    // console.log(userObject)
-    // setUser(userObject)
-    // document.getElementById("signInDiv").hidden = true;
+    var userObject = jwt_decode(googleUser.credential);
+    console.log(userObject)
+    setUser(userObject)
+    document.getElementById("signInDiv").hidden = true;
     
     console.log(googleUser)
     var profile = googleUser.getBasicProfile();
