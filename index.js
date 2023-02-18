@@ -20,6 +20,16 @@ function handleCredentialResponse(response) {
     console.log("Image URL: " + responsePayload.picture);
     console.log("Email: " + responsePayload.email);
  }
+
+ function decodeJwtResponse(response) {
+    const encodedPayload = response.split('.')[1];
+    const base64 = encodedPayload.replace(/-/g, '+').replace(/_/g, '/');
+    const decodedPayload = atob(base64);
+    const jwtPayload = JSON.parse(decodedPayload);
+    return jwtPayload;
+  }
+  
+
 // function start() {
 //     // 2. Initialize the JavaScript client library.
 //     gapi.client.init({
@@ -43,16 +53,16 @@ function handleCredentialResponse(response) {
 //   // 1. Load the JavaScript client library.
 //   gapi.load('client', start);
 
-//   function onSignIn(googleUser) {
-//     var profile = googleUser.getBasicProfile();
-//     var name = profile.getName();
-//     var email = profile.getEmail();
-//     var imageUrl = profile.getImageUrl();
-//     // 在页面上显示用户信息
-//     console.log(name);
-//     console.log(email);
-//     console.log(imageUrl);
-//   }
+  function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    var name = profile.getName();
+    var email = profile.getEmail();
+    var imageUrl = profile.getImageUrl();
+    // 在页面上显示用户信息
+    console.log(name);
+    console.log(email);
+    console.log(imageUrl);
+  }
 
 
 // function handleCredentialResponse(googleUser) {
