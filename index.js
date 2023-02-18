@@ -5,8 +5,8 @@
 // });
 // import jwt_decode from "./jwt-decode"
 
-const cleanHtml = DOMPurify.sanitize(dirtyHtml, { USE_PROFILES: { html: true } });
-const trustedHtml = TrustedHTML.parseHTML(cleanHtml);
+// const cleanHtml = DOMPurify.sanitize(dirtyHtml, { USE_PROFILES: { html: true } });
+// const trustedHtml = TrustedHTML.parseHTML(cleanHtml);
 
 
 function start() {
