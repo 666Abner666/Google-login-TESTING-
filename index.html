@@ -31,6 +31,7 @@
     <script>
 
         function handleCredentialResponse(googleUser) {
+            console.log(googleUser)
             var profile = googleUser.getBasicProfile();
             var name = profile.getName();
             var imageUrl = profile.getImageUrl();
