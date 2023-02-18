@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8">
 	<title>Google Login Example</title>
 	<!-- include the Google Sign-In API script -->
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
 	<!-- set the Google API client ID -->
-	<meta name="google-signin-client_id" content="1097504830403-uujkl2ue0n6ok3tchisr66ll0pq02cge.apps.googleusercontent.com">
+	<meta name="google-signin-client_id"
+		content="1097504830403-uujkl2ue0n6ok3tchisr66ll0pq02cge.apps.googleusercontent.com">
 </head>
+
 <body>
 	<!-- create a div for the Google Sign-In button -->
 	<div class="g-signin2" data-onsuccess="onSignIn"></div>
 	<div id="username"></div>
 	<img id="userimage" src="">
+	<div id="g_id_onload" data-client_id="1097504830403-uujkl2ue0n6ok3tchisr66ll0pq02cge.apps.googleusercontent.com"
+		data-context="signin" data-ux_mode="popup" data-login_uri="https://google-login-testing.vercel.app/"
+		data-auto_select="true" data-itp_support="true">
+	</div>
 
+	<div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline" data-text="signin_with"
+		data-size="large" data-logo_alignment="left">
+	</div>
 	<!-- create a function to handle successful Google Sign-In -->
 	<script>
 		function onSignIn(googleUser) {
 			var profile = googleUser.getBasicProfile();
 			var name = profile.getName();
 			var imageUrl = profile.getImageUrl();
-			
+
 			// 在页面上显示用户信息
 			document.getElementById('username').innerHTML = name;
 			document.getElementById('userimage').src = imageUrl;
-		  }
-		  
+		}
+
 	</script>
 </body>
+
 </html>
