@@ -9,6 +9,7 @@
 // const trustedHtml = TrustedHTML.parseHTML(cleanHtml);
 
 function handleCredentialResponse(response) {
+    console.log('1111111111')
     // decodeJwtResponse() is a custom function defined by you
     // to decode the credential response.
     const responsePayload = decodeJwtResponse(response.credential);
@@ -22,6 +23,7 @@ function handleCredentialResponse(response) {
  }
 
  function decodeJwtResponse(response) {
+    console.log('2222222222')
     const encodedPayload = response.split('.')[1];
     const base64 = encodedPayload.replace(/-/g, '+').replace(/_/g, '/');
     const decodedPayload = atob(base64);
