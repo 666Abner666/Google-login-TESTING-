@@ -7,7 +7,7 @@
 
 gapi.load('auth2', function() {
     gapi.auth2.init({
-      client_id: 'YOUR_CLIENT_ID'
+      client_id: '1097504830403-uujkl2ue0n6ok3tchisr66ll0pq02cge.apps.googleusercontent.com'
     });
   });
 
