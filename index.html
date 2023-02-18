@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,38 +8,42 @@
     <title>GOOGLE LOGIN</title>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
+
 <body>
-	<div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <div id="username"></div>
-	<img id="userimage" src="">
+    <img id="userimage" src="">
 
-    <div id="g_id_onload"
-     data-client_id="1097504830403-uujkl2ue0n6ok3tchisr66ll0pq02cge.apps.googleusercontent.com"
-     data-context="signin"
-     data-ux_mode="popup"
-     data-login_uri="https://google-login-testing.vercel.app"
-     data-auto_prompt="false">
-</div>
 
-<div class="g_id_signin"
-     data-type="standard"
-     data-shape="rectangular"
-     data-theme="filled_blue"
-     data-text="signin_with"
-     data-size="large"
-     data-logo_alignment="left">
-</div>
-<script>
-    function onSignIn(googleUser) {
-        var profile = googleUser.getBasicProfile();
-        var name = profile.getName();
-        var imageUrl = profile.getImageUrl();
+    <div id="g_id_onload" data-client_id="1097504830403-uujkl2ue0n6ok3tchisr66ll0pq02cge.apps.googleusercontent.com"
+        data-callback="handleCredentialResponse">
+    </div>
+    <div class="g_id_signin" data-type="standard"></div>
 
-        // 在页面上显示用户信息
-        document.getElementById('username').innerHTML = name;
-        document.getElementById('userimage').src = imageUrl;
-    }
+    <!-- <div id="g_id_onload" data-client_id="1097504830403-uujkl2ue0n6ok3tchisr66ll0pq02cge.apps.googleusercontent.com"
+        data-context="signin" data-ux_mode="popup" data-login_uri="https://google-login-testing.vercel.app"
+        data-auto_prompt="false">
+    </div> -->
 
-</script>
+    <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="filled_blue"
+        data-text="signin_with" data-size="large" data-logo_alignment="left">
+    </div>
+    <script>
+
+        function handleCredentialResponse() {
+            // 在页面上显示用户信息
+            document.getElementById('username').innerHTML = name;
+            document.getElementById('userimage').src = imageUrl;
+        }
+
+
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            var name = profile.getName();
+            var imageUrl = profile.getImageUrl();
+        }
+
+    </script>
 </body>
+
 </html>
