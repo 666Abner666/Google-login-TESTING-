@@ -12,18 +12,18 @@ function handleCredentialResponse(googleUser) {
     // setUser(userObject)
     // document.getElementById("signInDiv").hidden = true;
     
-    // console.log(googleUser)
-    // var profile = googleUser.getBasicProfile();
-    // var name = profile.getName();
-    // var imageUrl = profile.getImageUrl();
-    // // 在页面上显示用户信息
-    // console.log(profile)
-    // console.log(name)
-    // console.log(imageUrl)
+    console.log(googleUser)
+    var profile = googleUser.getBasicProfile();
+    var name = profile.getName();
+    var imageUrl = profile.getImageUrl();
+    // 在页面上显示用户信息
+    console.log(profile)
+    console.log(name)
+    console.log(imageUrl)
 
-    // console.log(profile.name)
-    // console.log(profile.imageUrl)
+    console.log(profile.name)
+    console.log(profile.imageUrl)
 
-    // document.getElementById('username').innerHTML = name;
-    // document.getElementById('userimage').src = imageUrl;
+    document.getElementById('username').innerHTML = name;
+    document.getElementById('userimage').src = imageUrl;
 }
