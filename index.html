@@ -11,13 +11,21 @@
 <body>
 	<!-- create a div for the Google Sign-In button -->
 	<div class="g-signin2" data-onsuccess="onSignIn"></div>
+	<div id="username"></div>
+	<img id="userimage" src="">
 
 	<!-- create a function to handle successful Google Sign-In -->
 	<script>
 		function onSignIn(googleUser) {
 			var profile = googleUser.getBasicProfile();
-			console.log("Logged in as: " + profile.getName());
-		}
+			var name = profile.getName();
+			var imageUrl = profile.getImageUrl();
+			
+			// 在页面上显示用户信息
+			document.getElementById('username').innerHTML = name;
+			document.getElementById('userimage').src = imageUrl;
+		  }
+		  
 	</script>
 </body>
 </html>
