@@ -3,6 +3,7 @@
 //         client_id: '1097504830403-uujkl2ue0n6ok3tchisr66ll0pq02cge.apps.googleusercontent.com',
 //     });
 // });
+import jwt_decode from "jwt-decode"
 
 function handleCredentialResponse(googleUser) {
     console.log('1')
