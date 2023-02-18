@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GOOGLE LOGIN</title>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="index.js"></script>
     <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
 
 </head>
@@ -30,35 +31,7 @@
     <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="filled_blue"
         data-text="signin_with" data-size="large" data-logo_alignment="left">
     </div>
-    <script>
-
-        <!-- gapi.load('auth2', function () {
-            gapi.auth2.init({
-                client_id: '1097504830403-uujkl2ue0n6ok3tchisr66ll0pq02cge.apps.googleusercontent.com',
-            });
-        }); -->
-
-        function handleCredentialResponse(googleUser) {
-            console.log(googleUser)
-            var profile = googleUser.getBasicProfile();
-            var name = profile.getName();
-            var imageUrl = profile.getImageUrl();
-            // 在页面上显示用户信息
-            console.log(profile)
-            console.log(name)
-            console.log(imageUrl)
-
-            console.log(profile.name)
-            console.log(profile.imageUrl)
-
-            document.getElementById('username').innerHTML = name;
-            document.getElementById('userimage').src = imageUrl;
-        }
-
-
-
-
-    </script>
+    
 </body>
 
 </html>
