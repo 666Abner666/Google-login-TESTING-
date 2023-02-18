@@ -5,12 +5,29 @@
 // });
 // import jwt_decode from "./jwt-decode"
 
-gapi.load('auth2', function() {
-    gapi.auth2.init({
-      client_id: '1097504830403-uujkl2ue0n6ok3tchisr66ll0pq02cge.apps.googleusercontent.com'
+function start() {
+    // 2. Initialize the JavaScript client library.
+    gapi.client.init({
+      'apiKey': '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',
+      // Your API key will be automatically added to the Discovery Document URLs.
+      'discoveryDocs': ['https://people.googleapis.com/$discovery/rest'],
+      // clientId and scope are optional if auth is not required.
+      'clientId': '1097504830403-uujkl2ue0n6ok3tchisr66ll0pq02cge.apps.googleusercontent.com',
+      'scope': 'profile',
+    }).then(function() {
+      // 3. Initialize and make the API request.
+      return gapi.client.people.people.get({
+        'resourceName': 'people/me',
+        'requestMask.includeField': 'person.names'
+      });
+    }).then(function(response) {
+      console.log(response.result);
+    }, function(reason) {
+      console.log('Error: ' + reason.result.error.message);
     });
-  });
-
+  };
+  // 1. Load the JavaScript client library.
+  gapi.load('client', start);
   function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
     var name = profile.getName();
