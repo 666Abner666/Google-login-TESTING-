@@ -7,9 +7,11 @@
 
 // const cleanHtml = DOMPurify.sanitize(dirtyHtml, { USE_PROFILES: { html: true } });
 // const trustedHtml = TrustedHTML.parseHTML(cleanHtml);
-
+console.log("Encoded JWT ID token:" + response.credential);
+console.log('1212121212')
 function handleCredentialResponse(response) {
     console.log('1111111111')
+    console.log("Encoded JWT ID token:" + response.credential);
     // decodeJwtResponse() is a custom function defined by you
     // to decode the credential response.
     const responsePayload = decodeJwtResponse(response.credential);
