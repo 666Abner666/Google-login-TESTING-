@@ -5,6 +5,10 @@
 // });
 // import jwt_decode from "./jwt-decode"
 
+const cleanHtml = DOMPurify.sanitize(dirtyHtml, { USE_PROFILES: { html: true } });
+const trustedHtml = TrustedHTML.parseHTML(cleanHtml);
+
+
 function start() {
     // 2. Initialize the JavaScript client library.
     gapi.client.init({
@@ -28,38 +32,39 @@ function start() {
   };
   // 1. Load the JavaScript client library.
   gapi.load('client', start);
-  function onSignIn(googleUser) {
-    var profile = googleUser.getBasicProfile();
-    var name = profile.getName();
-    var email = profile.getEmail();
-    var imageUrl = profile.getImageUrl();
-    // 在页面上显示用户信息
-    console.log(name);
-    console.log(email);
-    console.log(imageUrl);
-  }
+
+//   function onSignIn(googleUser) {
+//     var profile = googleUser.getBasicProfile();
+//     var name = profile.getName();
+//     var email = profile.getEmail();
+//     var imageUrl = profile.getImageUrl();
+//     // 在页面上显示用户信息
+//     console.log(name);
+//     console.log(email);
+//     console.log(imageUrl);
+//   }
 
 
-function handleCredentialResponse(googleUser) {
-    console.log('1')
-    console.log("Encoded JWT ID token:" + googleUser.credential);
-    // var userObject = jwt_decode(googleUser.credential);
-    // console.log(userObject)
-    // setUser(userObject)
-    // document.getElementById("signInDiv").hidden = true;
+// function handleCredentialResponse(googleUser) {
+//     // console.log('1')
+//     // console.log("Encoded JWT ID token:" + googleUser.credential);
+//     // var userObject = jwt_decode(googleUser.credential);
+//     // console.log(userObject)
+//     // setUser(userObject)
+//     // document.getElementById("signInDiv").hidden = true;
     
-    console.log(googleUser)
-    var profile = googleUser.getBasicProfile();
-    var name = profile.getName();
-    var imageUrl = profile.getImageUrl();
-    // 在页面上显示用户信息
-    console.log(profile)
-    console.log(name)
-    console.log(imageUrl)
+//     console.log(googleUser)
+//     var profile = googleUser.getBasicProfile();
+//     var name = profile.getName();
+//     var imageUrl = profile.getImageUrl();
+//     // 在页面上显示用户信息
+//     console.log(profile)
+//     console.log(name)
+//     console.log(imageUrl)
 
-    console.log(profile.name)
-    console.log(profile.imageUrl)
+//     console.log(profile.name)
+//     console.log(profile.imageUrl)
 
-    document.getElementById('username').innerHTML = name;
-    document.getElementById('userimage').src = imageUrl;
-}
+//     document.getElementById('username').innerHTML = name;
+//     document.getElementById('userimage').src = imageUrl;
+// }
