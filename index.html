@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GOOGLE LOGIN</title>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
 </head>
 
 <body>
@@ -29,6 +31,12 @@
         data-text="signin_with" data-size="large" data-logo_alignment="left">
     </div>
     <script>
+
+        gapi.load('auth2', function () {
+            gapi.auth2.init({
+                client_id: 'YOUR_CLIENT_ID',
+            });
+        });
 
         function handleCredentialResponse(googleUser) {
             console.log(googleUser)
