@@ -30,18 +30,21 @@
     </div>
     <script>
 
-        function handleCredentialResponse() {
+        function handleCredentialResponse(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            var name = profile.getName();
+            var imageUrl = profile.getImageUrl();
             // 在页面上显示用户信息
             document.getElementById('username').innerHTML = name;
             document.getElementById('userimage').src = imageUrl;
         }
 
 
-        function onSignIn(googleUser) {
+        <!-- function onSignIn(googleUser) {
             var profile = googleUser.getBasicProfile();
             var name = profile.getName();
             var imageUrl = profile.getImageUrl();
-        }
+        } -->
 
     </script>
 </body>
