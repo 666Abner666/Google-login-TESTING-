@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GOOGLE LOGIN</title>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
 
 </head>
 
@@ -32,11 +32,11 @@
     </div>
     <script>
 
-        gapi.load('auth2', function () {
+        <!-- gapi.load('auth2', function () {
             gapi.auth2.init({
                 client_id: '1097504830403-uujkl2ue0n6ok3tchisr66ll0pq02cge.apps.googleusercontent.com',
             });
-        });
+        }); -->
 
         function handleCredentialResponse(googleUser) {
             console.log(googleUser)
